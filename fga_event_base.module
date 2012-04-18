@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the fga_event_base feature.
+ */
+
+include_once 'fga_event_base.features.inc';
