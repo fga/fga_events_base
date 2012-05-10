@@ -50,6 +50,7 @@ function fga_event_base_field_group_info() {
     'weight' => '9',
     'children' => array(
       0 => 'field_venue',
+      1 => 'field_event_venue',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

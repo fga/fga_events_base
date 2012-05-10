@@ -10,14 +10,14 @@
 function fga_event_base_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'field_collection_item-field_moreinfo-field_info'
-  $fields['field_collection_item-field_moreinfo-field_info'] = array(
+  // Exported field: 'field_collection_item-field_event_more_info-field_event_mi_a'
+  $fields['field_collection_item-field_event_more_info-field_event_mi_a'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_info',
+      'field_name' => 'field_event_mi_a',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -37,7 +37,7 @@ function fga_event_base_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'field_moreinfo',
+      'bundle' => 'field_event_more_info',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -51,8 +51,8 @@ function fga_event_base_field_default_fields() {
         ),
       ),
       'entity_type' => 'field_collection_item',
-      'field_name' => 'field_info',
-      'label' => 'Info',
+      'field_name' => 'field_event_mi_a',
+      'label' => 'A',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -62,7 +62,7 @@ function fga_event_base_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '5',
+          'rows' => '3',
         ),
         'type' => 'text_textarea',
         'weight' => '2',
@@ -70,14 +70,14 @@ function fga_event_base_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_moreinfo-field_prompt'
-  $fields['field_collection_item-field_moreinfo-field_prompt'] = array(
+  // Exported field: 'field_collection_item-field_event_more_info-field_event_mi_q'
+  $fields['field_collection_item-field_event_more_info-field_event_mi_q'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_prompt',
+      'field_name' => 'field_event_mi_q',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -104,7 +104,7 @@ function fga_event_base_field_default_fields() {
       'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
-      'bundle' => 'field_moreinfo',
+      'bundle' => 'field_event_more_info',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -118,8 +118,8 @@ function fga_event_base_field_default_fields() {
         ),
       ),
       'entity_type' => 'field_collection_item',
-      'field_name' => 'field_prompt',
-      'label' => 'Prompt',
+      'field_name' => 'field_event_mi_q',
+      'label' => 'Q',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -201,6 +201,145 @@ function fga_event_base_field_default_fields() {
         ),
         'type' => 'text_textarea_with_summary',
         'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_more_info'
+  $fields['node-event-field_event_more_info'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_more_info',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'field_collection',
+      'settings' => array(
+        'path' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'field_collection',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'field_collection',
+          'settings' => array(
+            'add' => 'Add',
+            'delete' => 'Delete',
+            'description' => TRUE,
+            'edit' => 'Edit',
+            'view_mode' => 'full',
+          ),
+          'type' => 'field_collection_view',
+          'weight' => 7,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_more_info',
+      'label' => 'More info',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'field_collection',
+        'settings' => array(),
+        'type' => 'field_collection_embed',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_venue'
+  $fields['node-event-field_event_venue'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_venue',
+      'foreign keys' => array(
+        'nid' => array(
+          'columns' => array(
+            'nid' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'nid' => array(
+          0 => 'nid',
+        ),
+      ),
+      'module' => 'node_reference',
+      'settings' => array(
+        'referenceable_types' => array(
+          'article' => 0,
+          'event' => 0,
+          'page' => 0,
+          'venue' => 'venue',
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'node_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Select a venue at which to hold this event.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'node_reference',
+          'settings' => array(),
+          'type' => 'node_reference_default',
+          'weight' => 8,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_venue',
+      'label' => 'Venue',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'node_reference',
+        'settings' => array(
+          'autocomplete_match' => 'contains',
+          'autocomplete_path' => 'node_reference/autocomplete',
+          'size' => '60',
+        ),
+        'type' => 'node_reference_autocomplete',
+        'weight' => '11',
       ),
     ),
   );
@@ -359,152 +498,13 @@ function fga_event_base_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_moreinfo'
-  $fields['node-event-field_moreinfo'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_moreinfo',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'module' => 'field_collection',
-      'settings' => array(
-        'path' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'field_collection',
-    ),
-    'field_instance' => array(
-      'bundle' => 'event',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'add' => 'Add',
-            'delete' => 'Delete',
-            'description' => TRUE,
-            'edit' => 'Edit',
-            'view_mode' => 'full',
-          ),
-          'type' => 'field_collection_view',
-          'weight' => 4,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_moreinfo',
-      'label' => 'More info',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'field_collection',
-        'settings' => array(),
-        'type' => 'field_collection_embed',
-        'weight' => '5',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-event-field_venue'
-  $fields['node-event-field_venue'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_venue',
-      'foreign keys' => array(
-        'nid' => array(
-          'columns' => array(
-            'nid' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'nid' => array(
-          0 => 'nid',
-        ),
-      ),
-      'module' => 'node_reference',
-      'settings' => array(
-        'referenceable_types' => array(
-          'article' => 0,
-          'event' => 0,
-          'page' => 0,
-          'venue' => 'venue',
-        ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => '',
-          'view_name' => '',
-        ),
-      ),
-      'translatable' => '0',
-      'type' => 'node_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'event',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'Select a venue at which to hold this event.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'node_reference',
-          'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => 3,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_venue',
-      'label' => 'Venue',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'node_reference',
-        'settings' => array(
-          'autocomplete_match' => 'contains',
-          'autocomplete_path' => 'node_reference/autocomplete',
-          'size' => '60',
-        ),
-        'type' => 'node_reference_autocomplete',
-        'weight' => '10',
-      ),
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
+  t('A');
   t('A brief description of the event.');
   t('Description');
-  t('Info');
   t('More info');
-  t('Prompt');
+  t('Q');
   t('Select a venue at which to hold this event.');
   t('Venue');
   t('When');
